@@ -1,1 +1,357 @@
+<!DOCTYPE html>
+<html>
 
+<body>
+<style>
+body{
+text-align:center;
+font-weight:bolder;
+}
+</style>
+<div id="main">
+<button onclick="chnlg()">View Change Log + stats</button>
+<h1>Welcome to carrot clicker!</h1>
+<p>You have <span id="disp">no</span> carrots.</p>
+
+<button onclick="clicked()" id="crt"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmB-984G7a_lXf4VleBn84IO9luJIwH8zHhcMSFz6ZcnkHLqa5XCLzf77o:https://uxwing.com/wp-content/themes/uxwing/download/fruits-vegetables/carrot-icon.svg&amp;s" alt="Carrot icon PNG and SVG Vector Free Download"/> </button>
+<p> You have <span id="cpcdisp">1</span> carrots per click! </p>
+<br>
+<p> Quality carrots! Increases carrots per click by <span id="upgr1cpcdisp">one</span>! cost: <span id= "upgr1cost">15</span> carrots</p>
+<button onclick="upgr1()">Buy</button>
+<p> Carrot farmer! Increases carrots per click by <span id="upgr2cpcdisp">10</span>! cost: <span id="upgr2cost">100</span> carrots </p>
+<button onclick="upgr2()">Buy</button>
+<p> Carrot enhancer! Increases carrots per click by <span id="upgr3cpcdisp">100</span>! cost: <span id="upgr3cost">1000</span> carrots </p>
+<button onclick="upgr3()">Buy</button>
+<p> Carrot Mine! Increases carrots per click by <span id="upgr4cpcdisp">1000</span>! cost: <span id="upgr4cost">10000</span> carrots </p>
+<button onclick="upgr4()">Buy</button>
+<p> Carrot Factory! Increases carrots per click by <span id="upgr5cpcdisp">100000</span> cost: <span id="upgr5cost">1000000</span> carrots </p>
+<button onclick="upgr5()">Buy</button>
+<br> <br>
+<button onclick="spcshop()">View Special Shop</button>
+<br> <br>
+<button onclick="rbrthmenu()">Open Rebirth Menu</button>
+<br><br><br>
+<button  onclick="cheats()">Cheat codes</button>
+</div>
+<div id="cheatmenu" style="display:none">
+<h1>CHEAT MENU</h1>
+<p>You entered a code. If the code is valid, there will be an option to claim below. </p>
+<div id="cheat1" style="display:none">
+<h3>You entered the code: CARROT. Click CLAIM.</h3>
+<p>Reward: 100 carrots</p>
+<button onclick="claim1()">CLAIM</button>
+</div>
+<div id="cheat2" style="display:none">
+<h3>You entered the code: carrot. Click CLAIM.</h3>
+<p>Reward: 1 carrot</p>
+<button onclick="claim2()">CLAIM</button>
+</div>
+<div id="cheat3" style="display:none">
+<h3>uhhh... You weren't supposed to find this one</h3>
+<p>Reward: ??? use code fix after this to undo changes.</p>
+<button onclick="claim3()">CLAIM</button>
+</div>
+<br> <br>
+<button onclick="exitcheats()">Return To Game</button>
+<div id="secretstuff">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<button onclick="secret()">Shhh...</button>
+</div>
+</div>
+<div id="changelog" style="display:none">
+<button onclick="rtrn()"> Return To Game</button>
+<h1> STATS FOR NERDS</h1>
+<p>Amount of times you have clicked the carrot: <span id="clickcount">0</span> times </p>
+<p>You have bought <span id="upgrstats">0</span> upgrades! </p>
+<p>In total, you have earned <span id="ttlcrt">0</span> carrots</p>
+<p>Total carrots spent: <span id="ttlspent">0</span></p>
+<p>You've rebirthed <span id="rbrthcnt">0</span> times!</p>
+<h1>CHANGELOG</h1>
+<p>-added the "carrot farmer" upgrade</p>
+<p>-added the changelog</p>
+<p>-added increasing prices</p>
+<p>-added the "carrot enhancer" upgrade </p>
+<p>-added statistics - more will be added</p>
+<p>-added "carrot mine" and "carrot factory" </p>
+<p>-added the special shop and special coins</p>
+<p>-added skins</p>
+<p>-removed skins because they ruined the game</p>
+<p>-fixed the exchange</p>
+<p>-more bug patches</p>
+<p>-added Chinese Factory Upgrade</p>
+<p>-added more stats</p>
+<p>-fixed a massive bug, that messed up how prices raise themselves.</p>
+<p>-rebirths are here at long last!</p>
+<p>-fixed a massive glitch involving rebirths</p>
+<p>-MONUMENTAL CHANGES OVER THE SUMMER</p>
+<p>-Fixed debt</p>
+<p>-Significantly simplified the program</p>
+<p>-Made the game run smoother and faster</p>
+<p>-Animations coming soon!</p>
+
+</div>
+
+<div id="spshop" style="display:none">
+
+<button onclick="rtrn2()"> Return To Game </button>
+<h1>Welcome to the special shop!</h1>
+<h2>EXCHANGE</h2>
+<p> You have <span id="crtdisp">no</span> carrots</p>
+<p> Exchange: 5000 carrots for 1 special Coin </p>
+<button onclick="xchng1()">EXCHANGE</button>
+<p> Exchange: 50000 carrots for 10 special Coins </p>
+<button onclick="xchng2()">EXCHANGE</button>
+<p> Exchange: 1,000,000 carrots for 200 special Coins </p>
+<button onclick="xchng3()">EXCHANGE</button>
+<p>You have <span id="spcashdisp">no</span> special coins</p>
+<h2>SHOP</h2>
+<p>Wash! Resets all of the upgrade costs to thier original. cost: 100 Special Coins</p>
+<button onclick="wash()">Buy</button>
+<div id="china">
+<p>ONE TIME ONLY Chinese Factories! Makes factories give you double the carrots per click. cost: 1000 special coins</p>
+<button onclick="bikwong()">Buy</button>
+</div>
+</div>
+
+<div id="rebirthmenu" style="display:none;">
+<button onclick="closerbrthmenu()">Return To Game</button>
+<h1>Welcome to the rebirth menu!</h1>
+<h3>Rebirthing requires you to have <span id="monkey">1000000000</span> carrots</h3>
+<h3>You have <span id="rbrthdisp">0</span> carrots.</h3>
+<p>Resets your carrots to zero</p>
+<p>Resets your carrots per click to 1</p>
+<p>Doubles the carrot per click added by every upgrade</p>
+<p>You keep your special coins and stats</p>
+<button onclick="rebirth()">Rebirth</button>
+</div>
+
+<script>
+let crts = 0;
+let cpc = 1;
+let upgr1c = 15;
+let upgr2c = 100;
+let upgr3c = 1000;
+let upgr4c = 10000;
+let clicks = 0;
+let spcash = 0;
+let totalupgrades = 0;
+let upgr5c = 1000000;
+let upgr1cpc = 1;
+let upgr2cpc = 10;
+let upgr3cpc = 100;
+let upgr4cpc = 1000;
+let upgr5cpc = 100000;
+let ttlcrts = 0;
+let ttlcrtsSpent = 0;
+let rebirthcost = 1000000000;
+let rebirthcount = 0;
+let cheatcode = null;
+let nothing = null;
+function chnlg(){
+document.getElementById("main").style.display = "none";
+document.getElementById('changelog').style.display = "block"
+}
+function rtrn(){
+document.getElementById("main").style.display = "block";        //returns to main menu and closes extra one
+document.getElementById('changelog').style.display = "none"
+}
+function clicked(){
+crts+= cpc;
+ttlcrts+= cpc;
+clicks++;
+updatepage();
+}
+function updatepage(){
+document.getElementById("disp").innerHTML = crts;
+document.getElementById("clickcount").innerHTML = clicks;
+document.getElementById('crtdisp').innerHTML = crts;
+document.getElementById("cpcdisp").innerHTML = cpc;
+document.getElementById('upgrstats').innerHTML = totalupgrades;
+document.getElementById('ttlspent').innerHTML = ttlcrtsSpent;	
+document.getElementById("upgr1cost").innerHTML = upgr1c;
+document.getElementById("upgr2cost").innerHTML = upgr2c;
+document.getElementById("upgr3cost").innerHTML = upgr3c;
+document.getElementById("upgr4cost").innerHTML = upgr4c;
+document.getElementById("upgr5cost").innerHTML = upgr5c;
+document.getElementById("ttlcrt").innerHTML = ttlcrts;
+document.getElementById('monkey').innerHTML = rebirthcost;
+document.getElementById('rbrthdisp').innerHTML = crts;
+document.getElementById("rbrthcnt").innerHTML = rebirthcount;
+document.getElementById("upgr1cpcdisp").innerHTML = upgr1cpc;
+document.getElementById("upgr2cpcdisp").innerHTML = upgr2cpc;
+document.getElementById("upgr3cpcdisp").innerHTML = upgr3cpc;
+document.getElementById("upgr4cpcdisp").innerHTML = upgr4cpc;
+document.getElementById("upgr5cpcdisp").innerHTML = upgr5cpc;
+document.getElementById('spcashdisp').innerHTML = spcash;
+}
+function upgr1(){                    // upgrades
+if(crts >= upgr1c){
+cpc+= upgr1cpc;
+crts-= upgr1c;
+totalupgrades++;
+ttlcrtsSpent += upgr1c;
+upgr1c+= 2;
+updatepage();
+}
+}
+function upgr2(){
+if(crts >= upgr2c){
+cpc+= upgr2cpc;
+crts-= upgr2c;
+totalupgrades++;
+ttlcrtsSpent += upgr2c;
+upgr2c+= 20;
+updatepage();
+}
+}
+function upgr3(){
+if(crts >= upgr3c){
+cpc+= upgr3cpc;
+crts-= upgr3c;
+totalupgrades++;
+ttlcrtsSpent += upgr3c;
+upgr3c+= 200;
+updatepage();
+}
+}
+function upgr4(){
+if(crts >= upgr4c){
+cpc+= upgr4cpc;
+crts-= upgr4c;
+totalupgrades++;
+ttlcrtsSpent += upgr4c;
+upgr4c+= 2000;
+updatepage();
+}
+}
+function upgr5(){
+if(crts >= upgr5c){
+cpc+= upgr5cpc;
+crts-= upgr5c;
+totalupgrades++;
+ttlcrtsSpent += upgr5c;
+upgr5c+= 200000;
+updatepage();
+}
+}
+function spcshop(){
+document.getElementById('main').style.display = "none"
+document.getElementById('spshop').style.display= "block"
+}
+function rtrn2(){
+document.getElementById('spshop').style.display= "none"
+document.getElementById('main').style.display= "block"
+}
+function xchng1(){
+if(crts >= 5000){
+crts-= 5000;
+spcash+= 1;
+updatepage();
+}
+}
+function xchng2(){
+if(crts >= 50000){
+crts-= 50000;
+spcash+= 10;
+updatepage();
+}
+}
+function xchng3(){
+if(crts >= 1000000){
+crts-= 1000000;
+spcash+= 200;
+updatepage()
+}
+}
+function wash(){
+if(spcash >= 100){
+spcash-= 100;
+document.getElementById('spcashdisp').innerHTML = spcash;
+upgr1c = 15;
+upgr2c = 100;
+upgr3c = 1000;
+upgr4c = 10000;
+upgr5c = 1000000;
+updatepage();
+}
+}
+function bikwong(){
+if(spcash >= 1000){
+upgr5cpc += upgr5cpc;
+spcash-= 1000;
+document.getElementById('china').style.display = "none";
+updatepage();
+}
+}
+function rbrthmenu(){
+document.getElementById('rebirthmenu').style.display = "block";
+document.getElementById('main').style.display = "none";
+}
+function closerbrthmenu(){
+document.getElementById('rebirthmenu').style.display = "none";
+document.getElementById('main').style.display = "block";
+}
+function rebirth(){
+if(crts >= rebirthcost){
+upgr1cpc += upgr1cpc;
+upgr2cpc += upgr2cpc;
+upgr3cpc += upgr3cpc;
+upgr4cpc += upgr4cpc;
+upgr5cpc += upgr5cpc;
+crts = 0;
+cpc = 1;
+upgr1c = 15;
+upgr2c = 100;
+upgr3c = 1000;
+upgr4c = 10000;
+upgr5c = 1000000;
+rebirthcost += rebirthcost;
+ttlcrtsSpent+= rebirthcost;
+document.getElementById('rebirthmenu').style.display = "none";
+document.getElementById('main').style.display = "block";
+rebirthcount++;
+updatepage();
+}
+}
+function cheats(){
+cheatcode = prompt('Enter a cheatcode');
+document.getElementById('main').style.display = "none";
+document.getElementById('cheatmenu').style.display = "block";
+if(cheatcode == "CARROT"){
+document.getElementById('cheat1').style.display = "block";
+}
+else if(cheatcode == "carrot"){
+document.getElementById('cheat2').style.display = "block";
+}
+else if(cheatcode == "admin"){
+document.getElementById('cheat3').style.display = "block";
+}
+else if(cheatcode == "fix"){
+document.body.style="text-align:center;background-color:white;color:black"
+}
+}
+function claim1(){
+crts+= 100;
+document.getElementById('cheat1').style.display = "none";
+updatepage();
+}
+function claim2(){
+crts++;
+document.getElementById('cheat2').style.display = "none"
+updatepage();
+}
+function claim3(){
+document.body.style="text-align:center;background-color:green;color:brown"
+document.getElementById('cheat3').style.display = "none"
+updatepage();
+}
+function exitcheats(){
+document.getElementById('main').style.display = "block";
+document.getElementById('cheatmenu').style.display = "none";
+}
+function secret(){
+nothing = prompt('You got a secret. The secret cheat code is: carrot. Close this.');
+document.getElementById('secretstuff').style.display = "none"
+}
+</script>
+</body>
